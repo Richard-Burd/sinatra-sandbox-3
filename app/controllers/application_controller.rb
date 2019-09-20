@@ -29,4 +29,12 @@ class ApplicationController < Sinatra::Base
     "The resulting number is #{@product}"
   end
 
+  get '/form' do
+  	erb :'new_form'
+  end
+
+  post '/reply' do
+    "Thank you for filling out the form"
+  end
+
 end
