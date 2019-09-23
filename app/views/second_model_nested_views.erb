@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A Second Model Interaction Page</title>
+    </head>
+    <body>
+        <p>The second model created in this workspace should do something below:</p>
+
+        <form method="POST" action="/model/second/reply">
+          <p>Enter a name for this class [model] instance: <input type="text" name="second_object[name]"></p>
+          <p>Enter the first number to be calculated: <input type="text" name="second_object[calc_values][first_number]"></p>
+          <p>Enter the second number to be calculated: <input type="text" name="second_object[calc_values][second_number]"></p>
+          <input type="submit">
+        </form>
+
+    </body>
+</html>

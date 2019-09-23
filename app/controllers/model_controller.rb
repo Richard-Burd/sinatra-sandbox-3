@@ -14,12 +14,17 @@ class ModelController < Sinatra::Base
   end
 
   post '/model/first/reply' do
-
-    # this will show us the hash values of the params hash produced by sinatra
-    # when the user enters data into the form at the URL above: '/form' :
-    params.to_s #=> {"name"=>"Tom", "age"=>"23"}
-
-    "The test of the model is: #{params[:modeltext]} "
+    "The text of the model is: #{params[:modeltext]} "
   end
 
+  # when naming routes such as 'index' or 'model' the names of these routes
+  # cannot begin with a number such as "/model/2nd"
+  get '/model/second' do
+    erb :second_model_nested_views
+  end
+
+  post '/model/second/reply' do
+    @model = SecondModel.new(params)
+    "Thank you, #{@model.name}, the second model has calculated a value of #{@model.calculator}; this was done by passing a nested params hash into the object model called 'second_model_nested.rb' located in the ./app/models directory"
+  end
 end

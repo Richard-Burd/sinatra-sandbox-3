@@ -10,7 +10,13 @@
         <!-- https://learn.co/tracks/full-stack-web-development-v7/sinatra/forms/html-forms-and-params -->
         <form method="POST" action="/reply">
           <p>Your Name: <input type="text" name="name"></p>
+
+          <!-- the name="age" is required.  If the "name" is anything
+               other than a name, Sinatra will break and the value will not be
+               in the params hash
+          -->
           <p>Your Age: <input type="text" name="age"></p>
+
           <input type="submit">
         </form>
     </body>
