@@ -16,11 +16,15 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/index' do
-  	erb :'index'
+    # you can write the name of the erb file with quotes...
+    # erb :'index'
+
+    # ...or without quotes...it doesn't matter
+  	erb :index
   end
 
   get '/info' do
-  	erb :'info'
+  	erb :info
   end
 
   # This is a sample dynamic route.
@@ -33,8 +37,20 @@ class ApplicationController < Sinatra::Base
   	erb :'new_form'
   end
 
+  # This is a sample reply
   post '/reply' do
-    "Thank you for filling out the form"
+
+    # this will show us the hash values of the params hash produced by sinatra
+    # when the user enters data into the form at the URL above: '/form' :
+    params.to_s #=> {"name"=>"Tom", "age"=>"23"}
+
+    "Thank you #{params[:name]} for filling out the form"
   end
 
+  get "/tools" do
+    @tools = ['screwdriver', 'drill', 'hammer']
+
+    erb :'tools_list', :layout => :'alt_layout'
+  end
+  
 end

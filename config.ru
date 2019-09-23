@@ -1,11 +1,12 @@
 require_relative 'config/environment.rb'
 
+use ModelController
 use AuxiliaryController
 run ApplicationController
 
 # In bash type:
 # $ rackup config.ru
-# ...you can just type "rackup" and it will look for the 
+# ...you can just type "rackup" and it will look for the
 # config.ru
 
 # Go to a web browser and go to this URL:
