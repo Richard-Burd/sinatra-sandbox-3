@@ -1,0 +1,22 @@
+<!-- This is an embedded Ruby file -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>All The Cats</title>
+    </head>
+    <body>
+
+        <h1>Comprehensive List of All Cats!</h1>
+
+
+        <p>This HTML code is inside of a '.erb' file in the views directory, where it belongs.</p>
+
+        <% @cats.each do |cat| %>
+            <%= cat.name %> <%= cat.age %> <%= cat.breed %><br>
+        <% end %>
+
+        <%= @cats[0].valid? %>
+
+    </body>
+</html>

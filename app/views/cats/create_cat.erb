@@ -1,0 +1,27 @@
+<!-- This is an embedded Ruby file -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create A New Cat</title>
+    </head>
+    <body>
+
+        <h1>This is where you will create a new cat</h1>
+        <p>This HTML code is inside of a '.erb' file in the views directory, where it belongs.</p>
+        <form action="/cats" method="POST">
+            <label>Cat Name:</label>
+            <input type="text" name="cat[name]" id="cat_name">
+            <br></br>
+            <label>Cat Age:</label>
+            <input type="text" name="cat[age]" id="cat_age">
+            <br></br>
+            <label>Cat Breed:</label>
+            <input type="text" name="cat[breed]" id="cat_breed">
+            <br></br>
+
+            <input type="submit" value="Create Cat">
+        </form>
+
+    </body>
+</html>

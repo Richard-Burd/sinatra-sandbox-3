@@ -1,5 +1,16 @@
 require_relative 'config/environment.rb'
 
+# https://learn.co/tracks/full-stack-web-development-v7/sinatra/activerecord/activerecord-in-sinatra
+# We'll need to update config.ru to use the Sinatra Middleware that lets our app
+# send patch requests.
+use Rack::MethodOverride
+# The MethodOverride middleware will intercept every request sent and received
+# by our application. If it finds a request with name="_method", it will set
+# the request type based on what is set in the value attribute, which in this
+# case is patch.
+
+
+use CatController
 use ModelController
 use AuxiliaryController
 run ApplicationController

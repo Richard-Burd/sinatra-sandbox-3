@@ -1,3 +1,4 @@
 rake -T
 rake db:create_migration NAME=create_dogs
 rake db:migrate
+rake db:console

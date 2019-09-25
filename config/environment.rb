@@ -8,10 +8,12 @@ Bundler.require
 require_relative '../app/controllers/application_controller'
 require_relative '../app/controllers/auxiliary_controller'
 require_relative '../app/controllers/model_controller'
+require_relative '../app/controllers/cat_controller'
 
 # You must also list all of the models in this environment file
 require_relative '../app/models/first_model'
 require_relative '../app/models/second_model_nested'
+require_relative '../app/models/cat'
 
 # The above statements can be simplified using this Bundler statement:
 # require_all './app'

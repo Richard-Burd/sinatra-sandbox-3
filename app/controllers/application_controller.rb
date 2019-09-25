@@ -18,6 +18,7 @@ class ApplicationController < Sinatra::Base
     # => {"session_id"=>"41ccdc9cf080392552f517283a4e7ea17c9e34a74d9a8c668cd4c2bc77b49e55",
     #     "csrf"=>"3tT7bvxbJ3kR03PB5YWWJgXJWas5+xnKuIg8Qo59p8c=",
     #     "tracking"=>{"HTTP_USER_AGENT"=>"ed63febfa774fcc7c9bdeef5810593add38300bd"}}
+    # you can also type "raise params.inspect" in this controller file to see the params in the sinatra error page
   end
 
   # by default, Sinatra will look for the views in the following directory:
@@ -70,6 +71,29 @@ class ApplicationController < Sinatra::Base
     @tools = ['screwdriver', 'drill', 'hammer']
 
     erb :'tools_list', :layout => :'alt_layout'
+  end
+
+  # https://learn.co/tracks/full-stack-web-development-v7/sinatra/activerecord/activerecord-in-sinatra
+  get '/models/:id/edit' do
+    erb :'edit'
+  end
+
+  get "/models/:id/delete" do
+    erb :'edit'
+  end
+
+  helpers do
+    # all ruby objects will now inherit from anything defined in this Object class
+    class Object
+      def true?
+        !!self
+      end
+    end
+    # now I can do the following:
+    # 7.true?
+    # ...and I will get a return value of "true"
+    # otherwise I will have to use the double negative: !!
+
   end
 
 end

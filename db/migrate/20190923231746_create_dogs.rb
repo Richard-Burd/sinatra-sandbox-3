@@ -1,3 +1,7 @@
+# in order to create one of these migrations, enter this in bash:
+# rake db:create_migration NAME=Cats
+# NOTE: you need a Rakefile in the main dir in order to do this
+# The class below will be created, you can then modify the contents
 class CreateDogs < ActiveRecord::Migration[6.0]
 
 # def up
